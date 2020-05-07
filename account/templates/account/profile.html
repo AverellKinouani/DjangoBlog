@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}	
+	<div class="mb-3 mx-auto col-4">
+		<div class="card">
+		  <img class="card-img-top rounded-circle" src="{{ request.user.profile.image.url}}" alt="Card image cap">
+		  <div class="card-body">
+		    <h2 class="card-title text-center"> <a href="{% url 'update_profile' %}"> {{ request.user.username | capfirst}} </a></h1>
+		    <h4 class="card-title text-center"> <a href="{% url 'update_profile' %}"> {{ request.user.profile.title | capfirst}} </a></h4>
+		  </div>
+		  <ul class="list-group list-group-flush">
+		    <li class="list-group-item alert alert-primary"><span class="text-dark font-weight-bold">Email: </span> <a href="{% url 'update_profile' %}"> {{ request.user.email }} </a></li>
+		    <li class="list-group-item alert alert-primary"><span class="text-dark font-weight-bold">Phone: </span> <a href="{% url 'update_profile' %}"> {{ request.user.profile.phone_number }} </a></li>
+		    <li class="list-group-item alert alert-primary"><span class="text-dark font-weight-bold">Localisation:</span> <a href="{% url 'update_profile' %}"> {{ request.user.profile.location | capfirst}} </a></li>
+		    <li class="list-group-item alert alert-primary"><span class="text-dark font-weight-bold">Biographie: <br/></span> <a href="{% url 'update_profile' %}"> {{ request.user.profile.bio | capfirst | safe }} </a></li>
+		    <li class="list-group-item alert alert-primary"><span class="text-dark font-weight-bold"> Voir mes articles <br/></span> <a href="{% url 'update_profile' %}"> {{ request.user.profile.bio | capfirst | safe }} </a></li>
+		  </ul>
+		  <div class="card-body mx-auto">
+		    <a href="{% url 'update_profile' %}" class="card-link btn btn-primary">Modifier votre profile</a>
+		  </div>
+		</div>
+	</div>
+{% endblock content %}
