@@ -1,3 +1,4 @@
+import django-heroku
 import os
 import environ
 
@@ -129,3 +130,5 @@ LOGIN_REDIRECT_URL = '/compte/profile'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+django_heroku.settings(locals())
