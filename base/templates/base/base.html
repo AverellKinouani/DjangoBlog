@@ -1,0 +1,23 @@
+
+{% load tz %}
+<!doctype html>
+<html lang="fr">
+
+<head>
+    {% include 'base/head.html' %}
+</head>
+
+<body>
+    {% include 'base/navbar.html' %}
+    {% block content %}
+    {% endblock content %}
+    {% block sidebar %}
+    {% endblock sidebar%}
+    {% block pagination %}
+    {% endblock pagination %}
+    {% include 'base/footer.html' %}
+    
+    {%include 'base/scripts.html' %}
+</body>
+
+</html>
