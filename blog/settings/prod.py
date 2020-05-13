@@ -4,7 +4,7 @@ from .base import *
 DEBUG = False
 
 ALLOWED_HOSTS = ['',]
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -14,7 +14,7 @@ DATABASES = {
         'HOST': 'db_host',
         'PORT': 'db_port',
     }
-}
+}'''
 
 import django_heroku
 django_heroku.settings(locals())
